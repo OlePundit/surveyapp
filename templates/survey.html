@@ -1,0 +1,503 @@
+{% extends 'base.html' %}
+{% block 'survey'%}
+<form action = "" enctype="multipart/form-data" method="POST">
+    <div class="mt-10 mx-5 p-5">
+        <h1 class="mx-5 mt-3"> Answer Survey</h1>
+        {% csrf_token %}
+        <div class="mb-4 mx-5">
+            <label for="answer1" class="form-label">{{survey.question1}}</label>
+            {% if survey.questiontype1 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" name= "bol1" value="bol1" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="{{survey.bol1a}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" name= "bol1" value="bol1" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="{{survey.bol2a}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" name= "bol1" value="bol1" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="{{survey.bol3a}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" name= "bol1" value="bol1" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="{{survey.bol4a}}">
+            </div>
+
+            {% elif survey.questiontype1 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer1" class="form-label ">Enter text</label>
+                <input type="text" name="answer1" class="form-control form-control-lg" id="answer1" placeholder="answer1">
+            </div>
+            {% else %}
+            <div class="col-md-6">
+                <select name="answer1" id="answer1" class="form-select col-md-6">
+                    <option value="{{survey.choice1a}}">{{survey.choice1a}}</option>
+                    <option value="{{survey.choice2a}}">{{survey.choice2a}}</option>
+                    <option value="{{survey.choice3a}}">{{survey.choice3a}}</option>
+                    <option value="{{survey.choice4a}}">{{survey.choice4a}}</option>
+                </select>
+            </div>
+
+            {% endif %}
+        </div>
+
+        <div class="mb-4 mx-5">
+            <label for="answer2" class="form-label">{{survey.question2}}</label>
+            {% if survey.questiontype2 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" name= "bol2" value="bol2" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="{{survey.bol1b}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" name= "bol2" value="bol2" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="{{survey.bol2b}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" name= "bol2" value="bol2" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="{{survey.bol3b}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" name= "bol2" value="bol2" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="{{survey.bol4b}}">
+            </div> 
+            {% elif survey.questiontype2 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer2" class="form-label ">Enter text</label>
+                <input type="text" name="answer2" class="form-control form-control-lg" id="answer2" placeholder="answer2">
+            </div>
+            {% else %}
+            <div class="col-md-6">
+                <select name="answer2" id="answer2" class="form-select col-md-6">
+                    <option value="choice1b">{{survey.choice1b}}</option>
+                    <option value="choice2b">{{survey.choice2b}}</option>
+                    <option value="choice3b">{{survey.choice3b}}</option>
+                    <option value="choice4b">{{survey.choice4b}}</option>
+                </select>
+            </div>
+
+            {% endif %}
+        </div>  
+        <div class="mb-4 mx-5">
+            <label for="answer3" class="form-label">{{survey.question3}}</label>
+            {% if survey.questiontype3 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol3" value="bol3" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol1c}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol3" value="bol3" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol2c}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol3" value="bol3" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol3c}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol3" value="bol3" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol4c}}" aria-label="Text input with checkbox">
+            </div>
+
+            {% elif survey.questiontype3 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer3" class="form-label ">Enter text</label>
+                <input type="text" name="answer3" class="form-control form-control-lg" id="answer3" placeholder="answer3">
+            </div>
+            {% else %}
+            <div class="col-md-6">
+                <select name="answer3" id="answer3" class="form-select col-md-6">
+                    <option value="choice1c">{{survey.choice1c}}</option>
+                    <option value="choice2c">{{survey.choice2c}}</option>
+                    <option value="choice3c">{{survey.choice3c}}</option>
+                    <option value="choice4c">{{survey.choice4c}}</option>
+                </select>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="mb-4 mx-5">
+            <label for="choices4" class="form-label">{{survey.question4}}</label> 
+            {% if survey.questiontype4 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol4" value="bol4" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol1d}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol4" value="bol4" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol2d}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol4" value="bol4" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol3d}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol4" value="bol4" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol4d}}" aria-label="Text input with checkbox">
+            </div>
+
+            {% elif survey.questiontype4 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer4" class="form-label ">Enter text</label>
+                <input type="text" name="answer4" class="form-control form-control-lg" id="answer4" placeholder="answer4">
+            </div>
+            {% else %}
+            <div class="col-md-6">
+                <select name="answer4" id="answer4" class="form-select col-md-6">
+                    <option value="choice1d">{{survey.choice1d}}</option>
+                    <option value="choice2d">{{survey.choice2d}}</option>
+                    <option value="choice3d">{{survey.choice3d}}</option>
+                    <option value="choice4d">{{survey.choice4d}}</option>
+                </select>
+            </div>
+
+            {% endif %}
+        </div>
+
+        <div class="mb-4 mx-5">
+            <label for="choices5" class="form-label">{{survey.question5}}</label>
+            {% if survey.questiontype5 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol5" value="bol5" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bole}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol5" value="bol5" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol2e}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol5" value="bol5" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol3e}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol5" value="bol5" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol4e}}" aria-label="Text input with checkbox">
+            </div>
+            {% elif survey.questiontype5 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer5" class="form-label ">Enter text</label>
+                <input type="text" name="answer5" class="form-control form-control-lg" id="answer5" placeholder="answer5">
+            </div>
+            {% else %}
+            <div class="col-md-6">
+                <select name="answer5" id="answer5" class="form-select col-md-6">
+                    <option value="choice1e">{{survey.choice1e}}</option>
+                    <option value="choice2e">{{survey.choice2e}}</option>
+                    <option value="choice3e">{{survey.choice3e}}</option>
+                    <option value="choice4e">{{survey.choice4e}}</option>
+                </select>
+            </div>
+
+            {% endif %}
+        </div>
+        {% if survey.question6 != '' %}
+        <div class="mb-4 mx-5">
+            <label for="choices6" class="form-label">{{survey.question6}}</label>
+            {% if survey.questiontype6 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol6" value="bol6" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol1f}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol6" value="bol6" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol2f}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol6" value="bol6" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol3f}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol6" value="bol6" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol4f}}" aria-label="Text input with checkbox">
+            </div>
+
+            {% elif survey.questiontype6 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer6" class="form-label ">Enter text</label>
+                <input type="text" name="answer6" class="form-control form-control-lg" id="answer6" placeholder="answer6">
+            </div>
+            {% else %}
+                <div class="col-md-6">
+                    <select name="answer6" id="answer6" class="form-select col-md-6">
+                        <option value="choice1f">{{survey.choice1f}}</option>
+                        <option value="choice2f">{{survey.choice2f}}</option>
+                        <option value="choice3f">{{survey.choice3f}}</option>
+                        <option value="choice4f">{{survey.choice4f}}</option>
+                    </select>
+                </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {% if survey.question7 != '' %}
+        <div class="mb-4 mx-5">
+            <label for="choices7" class="form-label">{{survey.question7}}</label> 
+            {% if survey.questiontype7 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol7" value="bol7" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol1g}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol7" value="bol7" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol2g}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol7" value="bol7" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol3g}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol7" value="bol7" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol4g}}" aria-label="Text input with checkbox">
+            </div>
+
+
+            {% elif survey.questiontype7 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer7" class="form-label ">Enter text</label>
+                <input type="text" name="answer7" class="form-control form-control-lg" id="answer7" placeholder="answer7">
+            </div>
+            {% else %}
+            <div class="col-md-6">
+                <select name="answer7" id="answer7" class="form-select col-md-6">
+                    <option value="choice1g">{{survey.choice1g}}</option>
+                    <option value="choice2g">{{survey.choice2g}}</option>
+                    <option value="choice3g">{{survey.choice3g}}</option>
+                    <option value="choice4g">{{survey.choice4g}}</option>
+                </select>
+            </div>
+
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {% if survey.question8 != '' %}
+        <div class="mb-4 mx-5">
+            <label for="choices8" class="form-label">{{survey.question8}}</label>
+            {% if survey.questiontype8 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol8" value="bol8" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol1h}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol8" value="bol8" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol2h}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol8" value="bol8" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol3h}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol8" value="bol8" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol4h}}" aria-label="Text input with checkbox">
+            </div>
+
+
+            {% elif survey.questiontype8 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer8" class="form-label ">Enter text</label>
+                <input type="text" name="answer8" class="form-control form-control-lg" id="answer8" placeholder="answer8">
+            </div>
+            {% else %}
+            <div class="col-md-6">
+                <select name="choices1" id="choices1" class="form-select col-md-6">
+                    <option value="choice1h">{{survey.choice1h}}</option>
+                    <option value="choice2h">{{survey.choice2h}}</option>
+                    <option value="choice3h">{{survey.choice3h}}</option>
+                    <option value="choice4h">{{survey.choice4h}}</option>
+                </select>
+            </div>
+
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {% if survey.question9 != '' %}
+        <div class="mb-4 mx-5">
+            <label for="choices9" class="form-label">{{survey.question9}}</label>
+            {% if survey.questiontype9 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol9" value="bol9" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol1i}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol9" value="bol9" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol2i}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol9" value="bol9" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol3i}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol9" value="bol9" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol4i}}" aria-label="Text input with checkbox">
+            </div>
+
+            {% elif survey.questiontype9 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer9" class="form-label ">Enter text</label>
+                <input type="text" name="answer9" class="form-control form-control-lg" id="answer9" placeholder="answer9">
+            </div>
+            {% else %}
+            <div class="col-md-6">
+                <select name="choices1" id="choices1" class="form-select col-md-6">
+                    <option value="choice1i">{{survey.choice1i}}</option>
+                    <option value="choice2i">{{survey.choice2i}}</option>
+                    <option value="choice3i">{{survey.choice3i}}</option>
+                    <option value="choice4i">{{survey.choice4i}}</option>
+                </select>
+            </div>
+
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="mb-4 mx-5">
+        {% if survey.question10 != '' %}
+            <label for="choices10" class="form-label">{{survey.question10}}</label>
+            {% if survey.questiontype10 == 'trueorfalse' %}
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol10" value="bol10" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol1j}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol10" value="bol10" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol2j}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol10" value="bol10" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol3j}}" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name= "bol10" value="bol10" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" placeholder="{{survey.bol4j}}" aria-label="Text input with checkbox">
+            </div>
+
+
+            {% elif survey.questiontype10 == 'freetext' %}
+            <div class="mb-3 mx-5">
+                <label for="answer10" class="form-label ">Enter text</label>
+                <input type="text" name="answer10" class="form-control form-control-lg" id="answer10" placeholder="answer10">
+            </div>
+            {% else %}
+            <div class="col-md-6">
+                <select name="choices1" id="choices1" class="form-select col-md-6">
+                    <option value="choice1j">{{survey.choice1j}}</option>
+                    <option value="choice2j">{{survey.choice2j}}</option>
+                    <option value="choice3j">{{survey.choice3j}}</option>
+                    <option value="choice4j">{{survey.choice4j}}</option>
+                </select>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    
+        <div class="mb-3 mx-5">
+            <button type="submit" class="btn-primary"> Subscribe</button>
+        </div>
+    </div> 
+
+    </form>
+{% endblock %}

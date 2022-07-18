@@ -1,0 +1,659 @@
+{% extends 'base.html' %}
+{% block 'businesses'%}
+<form action = "" enctype="multipart/form-data" method="POST">
+    <div class="mt-10 mx-5 p-5">
+        <h1 class="mx-5 mt-3"> Create a Survey</h1>
+        {% csrf_token %}
+        <div class="mb-3 mx-5">
+            <label for="category" class="form-label ">Category</label>
+            <select name="category" id="category" class="form-select">
+                <option value="automobiles">Automobiles</option>
+                <option value="beauty">Beauty</option>
+                <option value="agriculture">Agriculture</option>
+                <option value="food">Food</option>
+                <option value="technology">Technology</option>
+                <option value="home">Home</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="techothersnology">Others</option>
+            </select>
+        </div>
+
+        <div class="mb-3 mx-5">
+            <label for="dexcription" class="form-label ">Survey Description</label>
+            <input type="text" name="description" class="form-control form-control-lg" id="description" placeholder="description">
+        </div>
+
+        <div class="mb-3 mx-5">
+            <label for="location" class="form-label ">Enter your location</label>
+            <input type="text" name="location" class="form-control form-control-lg" id="location" placeholder="location">
+        </div>
+
+        <div class="mb-3 mx-5">
+            <label for="image" class="form-label">Upload an image that best describes the survey</label>
+            <input class="form-control" type="file" name="image" id="image">
+        </div>
+
+        <div class="mb-3 mx-5">
+            <label for="question1" class="form-label ">Question 1</label>
+            <input type="text" name="question1" class="form-control form-control-lg" id="question1" placeholder="question1">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype1" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype1" id="questiontype" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1a" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1a" class="form-control form-control-lg" id="choice1a" placeholder="choice1a">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2a" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2a" class="form-control form-control-lg" id="choice2a" placeholder="choice2a">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3a" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3a" class="form-control form-control-lg" id="choice3a" placeholder="choice3a">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4a" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4a" class="form-control form-control-lg" id="choice4a" placeholder="choice4a">
+                </div>
+            </div>
+
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1a" class="form-label ">option 1</label>
+                    <input type="text" name="bol1a" class="form-control form-control-lg" id="bol1a" placeholder="bol1a">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2a" class="form-label ">option 2</label>
+                    <input type="text" name="bol2a" class="form-control form-control-lg" id="bol2a" placeholder="bol2a">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3a" class="form-label ">option 3</label>
+                    <input type="text" name="bol3a" class="form-control form-control-lg" id="bol3a" placeholder="bol3a">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4a" class="form-label ">option 4</label>
+                    <input type="text" name="bol4a" class="form-control form-control-lg" id="bol4a" placeholder="bol4a">
+                </div>
+            </div>
+
+
+            <label for="question2" class="form-label ">Question 2</label>
+            <input type="text" name="question2" class="form-control form-control-lg" id="question2" placeholder="question2">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype2" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype2" id="questiontype2" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1b" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1b" class="form-control form-control-lg" id="choice1b" placeholder="choice1b">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2b" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2b" class="form-control form-control-lg" id="choice2b" placeholder="choice2b">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3b" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3b" class="form-control form-control-lg" id="choice3b" placeholder="choice3b">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4b" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4b" class="form-control form-control-lg" id="choice4b" placeholder="choice4b">
+                </div>
+            </div>
+
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1b" class="form-label ">Option 1</label>
+                    <input type="text" name="bol1b" class="form-control form-control-lg" id="bol1b" placeholder="bol1b">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2b" class="form-label ">Option 2</label>
+                    <input type="text" name="bol2b" class="form-control form-control-lg" id="bol2b" placeholder="bol2b">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3b" class="form-label ">Option 3</label>
+                    <input type="text" name="bol3b" class="form-control form-control-lg" id="bol3b" placeholder="bol3b">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4b" class="form-label ">Option 4</label>
+                    <input type="text" name="bol4b" class="form-control form-control-lg" id="bol4b" placeholder="bol4b">
+                </div>
+            </div>
+            
+
+            <label for="question3" class="form-label ">Question 3</label>
+            <input type="text" name="question3" class="form-control form-control-lg" id="question3" placeholder="question3">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype3" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype3" id="questiontype3" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1c" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1c" class="form-control form-control-lg" id="choice1c" placeholder="choice1c">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2c" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2c" class="form-control form-control-lg" id="choice2c" placeholder="choice2c">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3c" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3c" class="form-control form-control-lg" id="choice3c" placeholder="choice3c">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4c" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4c" class="form-control form-control-lg" id="choice4c" placeholder="choice4c">
+                </div>
+            </div>
+
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1c" class="form-label ">Option 1</label>
+                    <input type="text" name="bol1c" class="form-control form-control-lg" id="bol1c" placeholder="bol1c">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2c" class="form-label ">Option 2</label>
+                    <input type="text" name="bol2c" class="form-control form-control-lg" id="bol2c" placeholder="bol2c">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3c" class="form-label ">Option 3</label>
+                    <input type="text" name="bol3c" class="form-control form-control-lg" id="bol3c" placeholder="bol3c">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4c" class="form-label ">Option 4</label>
+                    <input type="text" name="bol4c" class="form-control form-control-lg" id="bol4c" placeholder="bol4c">
+                </div>
+            </div>
+
+
+            <label for="question4" class="form-label ">Question 4</label>
+            <input type="text" name="question4" class="form-control form-control-lg" id="question4" placeholder="question4">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype4" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype4" id="questiontype4" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1d" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1d" class="form-control form-control-lg" id="choice1d" placeholder="choice1d">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2d" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2d" class="form-control form-control-lg" id="choice2d" placeholder="choice2d">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3d" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3d" class="form-control form-control-lg" id="choice3d" placeholder="choice3d">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4d" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4d" class="form-control form-control-lg" id="choice4d" placeholder="choice4d">
+                </div>
+            </div>
+
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1d" class="form-label ">Option 1</label>
+                    <input type="text" name="bol1d" class="form-control form-control-lg" id="bol1d" placeholder="bol1d">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2d" class="form-label ">Option 2</label>
+                    <input type="text" name="bol2d" class="form-control form-control-lg" id="bol2d" placeholder="bol2d">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3d" class="form-label ">Option 3</label>
+                    <input type="text" name="bol3d" class="form-control form-control-lg" id="bol3d" placeholder="bol3d">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4d" class="form-label ">Option 4</label>
+                    <input type="text" name="bol4d" class="form-control form-control-lg" id="bol4d" placeholder="bol4d">
+                </div>
+            </div>
+
+
+            <label for="question5" class="form-label ">Question 5</label>
+            <input type="text" name="question5" class="form-control form-control-lg" id="question5" placeholder="question5">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype5" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype5" id="questiontype5" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1e" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1e" class="form-control form-control-lg" id="choice1e" placeholder="choice1e">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2e" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2e" class="form-control form-control-lg" id="choice2e" placeholder="choice2e">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3e" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3e" class="form-control form-control-lg" id="choice3e" placeholder="choice3e">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4e" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4e" class="form-control form-control-lg" id="choice4e" placeholder="choice4e">
+                </div>
+            </div>
+
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1e" class="form-label ">Option 1</label>
+                    <input type="text" name="bol1e" class="form-control form-control-lg" id="bol1e" placeholder="bol1e">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2e" class="form-label ">Option 2</label>
+                    <input type="text" name="bol2e" class="form-control form-control-lg" id="bol2e" placeholder="bol2e">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3e" class="form-label ">Option 3</label>
+                    <input type="text" name="bol3e" class="form-control form-control-lg" id="bol3e" placeholder="bol3e">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4e" class="form-label ">Option 4</label>
+                    <input type="text" name="bol4e" class="form-control form-control-lg" id="bol4e" placeholder="bol4e">
+                </div>
+            </div>
+    
+            
+            <label for="question6" class="form-label ">Question 6</label>
+            <input type="text" name="question6" class="form-control form-control-lg" id="question6" placeholder="question6">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype6" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype6" id="questiontype6" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1f" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1f" class="form-control form-control-lg" id="choice1f" placeholder="choice1f">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2f" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2f" class="form-control form-control-lg" id="choice2f" placeholder="choice2f">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3f" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3f" class="form-control form-control-lg" id="choice3f" placeholder="choice3f">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4f" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4f" class="form-control form-control-lg" id="choice4f" placeholder="choice4f">
+                </div>
+            </div>
+            
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1f" class="form-label ">Option 1</label>
+                    <input type="text" name="bol1f" class="form-control form-control-lg" id="bol1f" placeholder="bol1f">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2f" class="form-label ">Option 2</label>
+                    <input type="text" name="bol2f" class="form-control form-control-lg" id="bol2f" placeholder="bol2f">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3f" class="form-label ">Option 3</label>
+                    <input type="text" name="bol3f" class="form-control form-control-lg" id="bol3f" placeholder="bol3f">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4f" class="form-label ">Option 4</label>
+                    <input type="text" name="bol4f" class="form-control form-control-lg" id="bol4f" placeholder="bol4f">
+                </div>
+            </div>
+
+            <label for="question7" class="form-label ">Question 7</label>
+            <input type="text" name="question7" class="form-control form-control-lg" id="question7" placeholder="question7">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype7" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype7" id="questiontype7" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1g" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1g" class="form-control form-control-lg" id="choice1g" placeholder="choice1g">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2g" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2g" class="form-control form-control-lg" id="choice2g" placeholder="choice2g">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3g" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3g" class="form-control form-control-lg" id="choice3g" placeholder="choice3g">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4g" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4g" class="form-control form-control-lg" id="choice4g" placeholder="choice4g">
+                </div>
+            </div>
+
+            <div>
+                <div class="fs-5 mx-5 mt-3">If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1g" class="form-label ">Option 1</label>
+                    <input type="text" name="bol1g" class="form-control form-control-lg" id="bol1g" placeholder="bol1g">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2g" class="form-label ">Option 2</label>
+                    <input type="text" name="bol2g" class="form-control form-control-lg" id="bol2g" placeholder="bol2g">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3g" class="form-label ">Option 3</label>
+                    <input type="text" name="bol3g" class="form-control form-control-lg" id="bol3g" placeholder="bol3g">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4g" class="form-label ">Option 4</label>
+                    <input type="text" name="bol4g" class="form-control form-control-lg" id="bol4g" placeholder="bol4g">
+                </div>
+            </div>
+
+            <label for="question8" class="form-label ">Question 8</label>
+            <input type="text" name="question8" class="form-control form-control-lg" id="question8" placeholder="question8">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype8" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype8" id="questiontype8" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1h" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1h" class="form-control form-control-lg" id="choice1h" placeholder="choice1h">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2h" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2h" class="form-control form-control-lg" id="choice2h" placeholder="choice2h">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3h" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3h" class="form-control form-control-lg" id="choice3h" placeholder="choice3h">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4h" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4h" class="form-control form-control-lg" id="choice4h" placeholder="choice4h">
+                </div>
+            </div>
+
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1h" class="form-label ">Option 1</label>
+                    <input type="text" name="bol1h" class="form-control form-control-lg" id="bol1h" placeholder="bol1h">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2h" class="form-label ">Option 2</label>
+                    <input type="text" name="bol2h" class="form-control form-control-lg" id="bol2h" placeholder="bol2h">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3h" class="form-label ">Option 3</label>
+                    <input type="text" name="bol3h" class="form-control form-control-lg" id="bol3h" placeholder="bol3h">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4h" class="form-label ">Option 4</label>
+                    <input type="text" name="bol4h" class="form-control form-control-lg" id="bol4h" placeholder="bol4h">
+                </div>
+            </div>
+
+
+            <label for="question9" class="form-label ">Question 9</label>
+            <input type="text" name="question9" class="form-control form-control-lg" id="question9" placeholder="question9">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype9" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype9" id="questiontype9" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1i" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1i" class="form-control form-control-lg" id="choice1i" placeholder="choice1i">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2i" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2i" class="form-control form-control-lg" id="choice2i" placeholder="choice2i">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3i" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3i" class="form-control form-control-lg" id="choice3i" placeholder="choice3i">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4i" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4i" class="form-control form-control-lg" id="choice4i" placeholder="choice4i">
+                </div>
+            </div>
+
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1i" class="form-label ">Option 1</label>
+                    <input type="text" name="bol1i" class="form-control form-control-lg" id="bol1i" placeholder="bol1i">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2i" class="form-label ">Option 2</label>
+                    <input type="text" name="bol2i" class="form-control form-control-lg" id="bol2i" placeholder="bol2i">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3i" class="form-label ">Option 3</label>
+                    <input type="text" name="bol3i" class="form-control form-control-lg" id="bol3i" placeholder="bol3i">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4i" class="form-label ">Option 4</label>
+                    <input type="text" name="bol4i" class="form-control form-control-lg" id="bol4i" placeholder="bol4i">
+                </div>
+            </div>
+
+            <label for="question10" class="form-label ">Question 10</label>
+            <input type="text" name="question10" class="form-control form-control-lg" id="question10" placeholder="question10">
+        
+
+            <div class="mb-4 mx-5">
+                <label for="questiontype10" class="form-label">Question type</label>
+                <div class="col-md-6">
+                    <select name="questiontype10" id="questiontype10" class="form-select col-md-6">
+                        <option value="null">Select question type</option>
+                        <option value="multiplechoice">Multiple choice</option>
+                        <option value="freetext">Free text</option>
+                        <option value="trueorfalse">True or False</option>
+                    </select>
+                </div>
+            </div>  
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected multiple choice, then please provide the choices below</div>
+                <div class="mb-3 mx-5">
+                    <label for="choice1j" class="form-label ">Choice 1</label>
+                    <input type="text" name="choice1j" class="form-control form-control-lg" id="choice1j" placeholder="choice1j">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice2j" class="form-label ">Choice 2</label>
+                    <input type="text" name="choice2j" class="form-control form-control-lg" id="choice2j" placeholder="choice2j">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice3j" class="form-label ">Choice 3</label>
+                    <input type="text" name="choice3j" class="form-control form-control-lg" id="choice3j" placeholder="choice3j">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="choice4j" class="form-label ">Choice 4</label>
+                    <input type="text" name="choice4j" class="form-control form-control-lg" id="choice4j" placeholder="choice4j">
+                </div>
+            </div>
+
+            <div>
+                <div class="fs-5 mx-5 mt-3"> If you selected true or false, then please provide the following options</div>
+                <div class="mb-3 mx-5">
+                    <label for="bol1j" class="form-label ">Option 1</label>
+                    <input type="text" name="bol1j" class="form-control form-control-lg" id="bol1j" placeholder="bol1j">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol2j" class="form-label ">Option 2</label>
+                    <input type="text" name="bol2j" class="form-control form-control-lg" id="bol2j" placeholder="bol2j">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol3j" class="form-label ">Option 3</label>
+                    <input type="text" name="bol3j" class="form-control form-control-lg" id="bol3j" placeholder="bol3j">
+                </div>
+        
+                <div class="mb-3 mx-5">
+                    <label for="bol4j" class="form-label ">Option 4</label>
+                    <input type="text" name="bol4j" class="form-control form-control-lg" id="bol4j" placeholder="bol4j">
+                </div>
+            </div>
+            <div class="mb-3 mx-5">
+                <button type="submit" class="btn-primary"> Subscribe</button>
+            </div>
+        </div>  
+    </div> 
+
+</form>
+{% endblock %}
